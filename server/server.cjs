@@ -8,6 +8,16 @@ const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const {  OpenAI} = require('openai');
+
+
+//change render
+const PORT = process.env.PORT || 5000; // Use environment variable PORT or default to 5000
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
+//change render
+
+
 dotenv.config();
 
 /*const configuration = new Configuration({
