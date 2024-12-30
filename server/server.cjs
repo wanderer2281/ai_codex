@@ -36,8 +36,33 @@ const openai = new OpenAI({
 
 const app = express();
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: ['http://localhost:5173', 'https://ai-codex-ten.vercel.app'],
     }));
+
+//new cors
+
+const allowedOrigins = [
+    'http://localhost:5173',
+    'https://ai-codex-ten.vercel.app'
+];
+
+app.use(cors({
+    origin: (origin, callback) => {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    }
+}));
+
+
+//new cors
+
+
+
+
+
 app.use(express.json());
 
 app.get('/', async (req, res) => {
