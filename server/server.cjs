@@ -41,7 +41,7 @@ app.use(cors({
 
 //new cors
 
-const allowedOrigins = [
+/*const allowedOrigins = [
     'http://localhost:5173',
     'https://ai-codex-ten.vercel.app'
 ];
@@ -55,7 +55,7 @@ app.use(cors({
         }
     }
 }));
-
+*/
 
 //new cors
 
